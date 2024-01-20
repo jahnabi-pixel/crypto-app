@@ -18,8 +18,8 @@ const Footer = () => {
             letterSpacing={'widest'}
             textAlign={['center', 'left']}
           >
-            We are the best crypto trading app in India, we provide our guidance
-            at a very cheap price.
+          Welcome to Cryptox, the premier crypto trading app in India! We are your trusted partner in navigating the exciting world of cryptocurrencies. Our platform offers real-time data, comprehensive insights, and intuitive graphs to empower your trading decisions.
+          
           </Text>
         </VStack>
       </Stack>
