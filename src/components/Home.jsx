@@ -1,4 +1,4 @@
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 import btcSrc from '../assets/btc.png';
 import { motion } from 'framer-motion';
@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 const Home = () => {
   return (
     <Box
+      position="relative"
       bgColor={'blackAlpha.900'}
       w={'full'}
       h={'85vh'}
@@ -13,18 +14,21 @@ const Home = () => {
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
+      overflow="hidden"
     >
+      {/* Animation div */}
       <motion.div
-        whileHover={{ rotate: 10, scale: 1.2 }} // Increase scale on hover
+        whileHover={{ rotate: 10, scale: 1.2 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        initial={{ opacity: 0, scale: 0.5 }} // Initial size and opacity
-        animate={{ opacity: 1, scale: 1.5 }} // Larger size and opacity during animation
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1.5 }}
         exit={{ opacity: 0 }}
         style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
           width: '100%',
           height: '70%',
-          overflow: 'hidden',
-          position: 'relative',
         }}
       >
         <motion.div
@@ -38,16 +42,26 @@ const Home = () => {
         </motion.div>
       </motion.div>
 
-      <Text
-        fontSize={'6xl'}
-        textAlign={'center'}
-        fontWeight={'thin'}
-        color={'#FFD700'}
-        mt={'-10'} // Adjust the margin-top value
-        filter={'grayscale(1)'}
+      {/* VStack to vertically stack elements */}
+      <VStack
+        position="absolute"
+        top="70%"
+        left="50%"
+        transform="translate(-50%, -50%)"
+        spacing={2}
       >
-        Xcrypto
-      </Text>
+        <Text
+          fontSize={'6xl'}
+          textAlign={'center'}
+          fontWeight={'thin'}
+          color={'#FFD700'}
+          filter={'grayscale(1)'}
+        >
+          Xcrypto
+        </Text>
+
+        {/* Add other elements here if needed */}
+      </VStack>
     </Box>
   );
 };
